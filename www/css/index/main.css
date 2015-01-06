@@ -2,10 +2,15 @@
 {
   width:100%;
   height:246px;
-  border-bottom:1px solid gray;
   position:fixed;
   top:0px;
   left:0px;
+  background:url(../../images/bg.png) repeat;
+}
+
+.page-container section
+{
+  overflow:hidden;
 }
 
 .navigator
@@ -22,8 +27,14 @@
   width:100px;
   height:100%;
   line-height:88px;
-  color:black;
-  font-size:14px;
+  color:#9d703a;
+  font-size:13px;
   float:right;
   margin-right:40px;
+}
+
+.section-backgroundImage
+{
+  width:100%;
+  height:auto;
 }

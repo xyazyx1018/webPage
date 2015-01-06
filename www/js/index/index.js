@@ -1,6 +1,10 @@
 $(function() {
 
-  var $pageContainer = $('#pageContainer');
+  var $pageContainer = $('#pageContainer'),
+    $pageBanner = $('#pageBanner'),
+    pageBannerOriginHeight = 246, //导航栏第一页高度
+    pageBannerScrollHeight = 88; //导航栏滚动高度
+
   /**
    *初始化页面滚动
    */
@@ -13,12 +17,12 @@ $(function() {
     beforeMove: function(index) {
       console.log("before move page index:" + index);
       if (index == 1) {
-        $('#pageBanner').animate({
-          'height': 246 + 'px'
+        $pageBanner.animate({
+          'height': pageBannerOriginHeight + 'px'
         });
       } else {
-        $('#pageBanner').animate({
-          'height': 88 + 'px'
+        $pageBanner.animate({
+          'height': pageBannerScrollHeight + 'px'
         });
       }
     },
@@ -30,5 +34,8 @@ $(function() {
     responsiveFallback: false,
     direction: "vertical"
   });
+
+  var content = template('page-one');
+  $pageContainer.find('section').eq(0).append(content);
 
 });
