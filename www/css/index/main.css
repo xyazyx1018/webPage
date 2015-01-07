@@ -38,3 +38,55 @@
   width:100%;
   height:auto;
 }
+
+.page-container section
+{
+  background-size:100%;
+  background-repeat:none;
+}
+
+.page-one-section
+{
+  background-image:url(../../images/bg/1.jpg);
+}
+
+.page-two-section
+{
+  background-image:url(../../images/bg/2.jpg);
+}
+
+.page-three-section
+{
+  background-image:url(../../images/bg/3.jpg);
+}
+
+.page-four-section
+{
+  background-image:url(../../images/bg/4.jpg);
+}
+
+.page-one-box
+{
+  width:632px;
+  height:332px;
+  float:right;
+  margin-top:260px;
+  background:rgb(140,93,41);
+}
+
+.news-ul
+{
+  width:100%;
+  height:350px;
+  position:absolute;
+  background-color:red;
+}
+
+.map-container
+{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}

@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" href="css/common/common.css">
   <script type="text/javascript" src="js/common/utils.js"></script>
   <script type="text/javascript" src="js/common/template-native.js"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nHoGcscz6d92t5vWL2oYlMXv"></script>
   <script type="text/javascript">
     if(utils.isMobile){
       console.log('is mobile');
@@ -39,17 +40,59 @@
     </ul>
   </div>
   <div id="pageContainer" class="page-container">
-    <section><img class="section-backgroundImage" src="images/bg/1.jpg" /></section>
-    <section><img class="sextion-backgroundImage" src="images/bg/2.jpg" /></section>
-    <section><img class="sextion-backgroundImage" src="images/bg/3.jpg" /></section>
-    <section><img class="sextion-backgroundImage" src="images/bg/4.jpg" /></section>
-    <section><img /></section>
+    <section class="page-one-section"></section>
+    <section class="page-two-section"></section>
+    <section class="page-three-section"></section>
+    <section class="page-four-section"></section>
+    <section>
+      <div id="mapContainer" class="map-container">
+
+      </div>
+    </section>
   </div>
 </body>
 
+<script type="text/javascript">
+  var map = new BMap.Map("mapContainer"),    // 创建Map实例
+      point = new BMap.Point(104.078619,30.630713),
+      marker = new BMap.Marker(point);   //创建标注
+
+  map.centerAndZoom(point, 18);  // 初始化地图,设置中心点坐标和地图级别
+  map.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));   //添加地图类型控件
+  map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT})); //添加默认缩放平移控件
+  map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
+  map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+  map.addOverlay(marker);              // 将标注添加到地图中
+  map.centerAndZoom(point, 18);
+
+  var opts = {
+    width : 200,     // 信息窗口宽度
+    height: 60,     // 信息窗口高度
+    title : "晟海装饰" , // 信息窗口标题
+    enableMessage:false
+  }
+  var infoWindow = new BMap.InfoWindow("地址：四川省成都市锦绣路保利中心", opts);  // 创建信息窗口对象
+  marker.addEventListener("click", function(){
+    map.openInfoWindow(infoWindow, point); //开启信息窗口
+  });
+
+  map.openInfoWindow(infoWindow, point);
+
+</script>
+
 <script type="text/html" id="page-one">
-  <div>
-    test
+  <div class="page-one-box">
+
+  </div>
+</script>
+
+<script type="text/html" id="page-four">
+  <div class="page-four-box">
+    <ul class="news-ul">
+      <%for (var i=0;i<list.length;i++) {%>
+        <div><%=list[i]%></div>
+      <%}%>
+    </ul>
   </div>
 </script>
 
