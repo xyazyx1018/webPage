@@ -40,10 +40,18 @@
     </ul>
   </div>
   <div id="pageContainer" class="page-container">
-    <section class="page-one-section"></section>
-    <section class="page-two-section"></section>
-    <section class="page-three-section"></section>
-    <section class="page-four-section"></section>
+    <section class="page-one-section">
+      <img src="images/bg/1_content.png" class="content-image-one" />
+    </section>
+    <section class="page-two-section">
+      <img src="images/bg/2_content.png" class="content-image-two" />
+    </section>
+    <section class="page-three-section">
+      <img src="images/bg/3_content.png" class="content-image-three" />
+    </section>
+    <section class="page-four-section">
+      <img src="images/bg/4_content.png" class="content-image-four" />
+    </section>
     <section>
       <div id="mapContainer" class="map-container">
 
@@ -61,7 +69,7 @@
   map.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));   //添加地图类型控件
   map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT})); //添加默认缩放平移控件
   map.setCurrentCity("成都");          // 设置地图显示的城市 此项是必须设置的
-  map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+  //map.enableScrollWheelZoom(false);     //开启鼠标滚轮缩放
   map.addOverlay(marker);              // 将标注添加到地图中
   map.centerAndZoom(point, 18);
 

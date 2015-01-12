@@ -90,3 +90,31 @@
   top:0;
   left:0;
 }
+
+.content-image-one
+{
+  position:absolute;
+  right:0;
+  top:260px;
+}
+
+.content-image-two
+{
+  position:absolute;
+  right:0;
+  top:260px;
+}
+
+.content-image-three
+{
+  position:absolute;
+  right:0;
+  top:260px;
+}
+
+.content-image-four
+{
+  position:absolute;
+  left:100px;
+  top:180px;
+}
