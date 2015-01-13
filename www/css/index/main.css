@@ -41,7 +41,7 @@
 
 .page-container section
 {
-  background-size:100%;
+  background-size:100% 100%;
   background-repeat:none;
 }
 
@@ -117,4 +117,5 @@
   position:absolute;
   left:100px;
   top:180px;
+  height:40%;
 }
